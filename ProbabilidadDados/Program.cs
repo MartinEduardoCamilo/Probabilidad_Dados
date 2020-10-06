@@ -17,17 +17,17 @@ namespace ProbabilidadDados
 
             int[] lista = { 1, 2, 3, 4, 5, 6 };
 
-            //Console.WriteLine("Inserete un numero: ");
-            //numero = Convert.ToInt32(Console.Read());
+            Console.WriteLine("Inserete un numero: ");
+            numero = Convert.ToInt32(Console.Read());
 
-            //Console.WriteLine("Inserete la probabilidad: ");
-            //probabilidad = Convert.ToDouble(Console.Read());
+            Console.WriteLine("Inserete la probabilidad: ");
+            probabilidad = Convert.ToDouble(Console.Read());
 
-            //Console.WriteLine("////");
+            Console.ReadKey();
 
-            for(int i =0; i > 6 ; i++)
+            for (int i = 0; i < lista.Count(); i++)
             {
-                Console.WriteLine("jjj");
+                Console.WriteLine(i);
             }
         }
     }

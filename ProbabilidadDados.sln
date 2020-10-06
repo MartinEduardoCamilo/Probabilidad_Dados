@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProbabilidadDados", "ProbabilidadDados\ProbabilidadDados.csproj", "{68E5EF2D-7384-4851-A07D-6FFB358C8174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProbabilidadDados", "ProbabilidadDados\ProbabilidadDados.csproj", "{68E5EF2D-7384-4851-A07D-6FFB358C8174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Probabilidad.Forms", "Probabilidad.Forms\Probabilidad.Forms.csproj", "{118BA9B6-F3AD-4D64-AC30-6C0E571FD20E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{68E5EF2D-7384-4851-A07D-6FFB358C8174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68E5EF2D-7384-4851-A07D-6FFB358C8174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68E5EF2D-7384-4851-A07D-6FFB358C8174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{118BA9B6-F3AD-4D64-AC30-6C0E571FD20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118BA9B6-F3AD-4D64-AC30-6C0E571FD20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118BA9B6-F3AD-4D64-AC30-6C0E571FD20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118BA9B6-F3AD-4D64-AC30-6C0E571FD20E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
