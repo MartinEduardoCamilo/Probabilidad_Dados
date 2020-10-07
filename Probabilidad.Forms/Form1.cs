@@ -40,32 +40,26 @@ namespace Probabilidad.Forms
 
         private void Tirarbutton_Click(object sender, EventArgs e)
         {
-            if(Regex.IsMatch(NumerotextBox.Text, "[1-6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0-9] + (,[0-9]{ 1,3})?"))
+            Random ran = new Random();
+            
+            if(NumerotextBox.Text == string.Empty || NumerotextBox.Text != null )
             {
-                int numereo = Convert.ToInt32(NumerotextBox.Text);
-                double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
-                Buscar(numereo, probabilidad);
-            }
-            else
-            {
-                errorProvider1.SetError(ProbabilidadtextBox, "Debe de ser un numero decimal");
-                ProbabilidadtextBox.Focus();
-                errorProvider1.SetError(NumerotextBox, "Debe de ser un numero entero entre el 1 y 6");
-                NumerotextBox.Focus();
-            }
+                NumerotextBox.Text = ran.Next(1, 6).ToString();
+                Mensajelabel3.Text = "Numero del dado";
+            }  
+            
+            
         }
 
         private void Buscar(int numero, double probabilidad)
         {
             double aux = 0;
             int[] num = {1, 2, 3, 4, 5, 6 };
-
-            
-
+            double restar = 0 ;
             for (int i = 0; i < (num.Count()); i++)
             {
                 double resultado2 = 0.16;
-
+                
                 if (numero == num[i])
                 {
                     aux = (0.16 + probabilidad)*100;
@@ -73,9 +67,11 @@ namespace Probabilidad.Forms
                     dataGridView1.Rows.Add(i+1, resultado2.ToString("N2"), aux+"%");
                 }           
                 else
-                {
-                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), 0);
-                }
+                {                
+                    restar = ((aux/100)+(probabilidad/3)*100);
+                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), restar+"%");
+                    
+                }               
             }
         }
 
@@ -84,7 +80,30 @@ namespace Probabilidad.Forms
             errorProvider1.Clear();
             NumerotextBox.Text = string.Empty;
             ProbabilidadtextBox.Text = string.Empty;
-            dataGridView1.Rows.Clear(); 
+            dataGridView1.Rows.Clear();
+            Mensajelabel3.Text = null;
+        }
+
+        private void CalcularButton_Click(object sender, EventArgs e)
+        {
+             if (NumerotextBox.Text != null)
+            {
+
+           
+                if (Regex.IsMatch(NumerotextBox.Text, "[1-6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0-9] + (,[0-9]{ 1,3})?"))
+                {
+                    int numereo = Convert.ToInt32(NumerotextBox.Text);
+                    double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
+                    Buscar(numereo, probabilidad);
+                }
+                else
+                {
+                    errorProvider1.SetError(ProbabilidadtextBox, "Debe de ser un numero decimal");
+                    ProbabilidadtextBox.Focus();
+                    errorProvider1.SetError(NumerotextBox, "Debe de ser un numero entero entre el 1 y 6");
+                    NumerotextBox.Focus();
+                }
+            }
         }
     }
 }

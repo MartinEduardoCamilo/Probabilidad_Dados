@@ -37,6 +37,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Limpiarbutton = new System.Windows.Forms.Button();
+            this.CalcularButton = new System.Windows.Forms.Button();
+            this.Mensajelabel3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -44,40 +46,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 26);
+            this.label1.Location = new System.Drawing.Point(15, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingresa un numero.";
             // 
             // NumerotextBox
             // 
-            this.NumerotextBox.Location = new System.Drawing.Point(13, 56);
+            this.NumerotextBox.Location = new System.Drawing.Point(15, 75);
+            this.NumerotextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NumerotextBox.Name = "NumerotextBox";
-            this.NumerotextBox.Size = new System.Drawing.Size(110, 23);
+            this.NumerotextBox.Size = new System.Drawing.Size(125, 27);
             this.NumerotextBox.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 93);
+            this.label2.Location = new System.Drawing.Point(15, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Probabilidad.";
             // 
             // ProbabilidadtextBox
             // 
-            this.ProbabilidadtextBox.Location = new System.Drawing.Point(13, 127);
+            this.ProbabilidadtextBox.Location = new System.Drawing.Point(15, 169);
+            this.ProbabilidadtextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProbabilidadtextBox.Name = "ProbabilidadtextBox";
-            this.ProbabilidadtextBox.Size = new System.Drawing.Size(110, 23);
+            this.ProbabilidadtextBox.Size = new System.Drawing.Size(125, 27);
             this.ProbabilidadtextBox.TabIndex = 3;
             // 
             // Tirarbutton
             // 
-            this.Tirarbutton.Location = new System.Drawing.Point(12, 170);
+            this.Tirarbutton.Location = new System.Drawing.Point(138, 229);
+            this.Tirarbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Tirarbutton.Name = "Tirarbutton";
-            this.Tirarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Tirarbutton.Size = new System.Drawing.Size(86, 31);
             this.Tirarbutton.TabIndex = 4;
             this.Tirarbutton.Text = "Tirar";
             this.Tirarbutton.UseVisualStyleBackColor = true;
@@ -86,9 +91,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(192, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(404, 31);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(356, 170);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(407, 227);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Text = "dataGridView1";
             // 
@@ -98,19 +105,40 @@
             // 
             // Limpiarbutton
             // 
-            this.Limpiarbutton.Location = new System.Drawing.Point(93, 170);
+            this.Limpiarbutton.Location = new System.Drawing.Point(259, 229);
+            this.Limpiarbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Limpiarbutton.Name = "Limpiarbutton";
-            this.Limpiarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Limpiarbutton.Size = new System.Drawing.Size(86, 31);
             this.Limpiarbutton.TabIndex = 6;
             this.Limpiarbutton.Text = "Limpiar";
             this.Limpiarbutton.UseVisualStyleBackColor = true;
             this.Limpiarbutton.Click += new System.EventHandler(this.Limpiarbutton_Click);
             // 
+            // CalcularButton
+            // 
+            this.CalcularButton.Location = new System.Drawing.Point(15, 229);
+            this.CalcularButton.Name = "CalcularButton";
+            this.CalcularButton.Size = new System.Drawing.Size(94, 29);
+            this.CalcularButton.TabIndex = 7;
+            this.CalcularButton.Text = "Calcular";
+            this.CalcularButton.UseVisualStyleBackColor = true;
+            this.CalcularButton.Click += new System.EventHandler(this.CalcularButton_Click);
+            // 
+            // Mensajelabel3
+            // 
+            this.Mensajelabel3.AutoSize = true;
+            this.Mensajelabel3.Location = new System.Drawing.Point(156, 75);
+            this.Mensajelabel3.Name = "Mensajelabel3";
+            this.Mensajelabel3.Size = new System.Drawing.Size(0, 20);
+            this.Mensajelabel3.TabIndex = 8;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 238);
+            this.ClientSize = new System.Drawing.Size(850, 317);
+            this.Controls.Add(this.Mensajelabel3);
+            this.Controls.Add(this.CalcularButton);
             this.Controls.Add(this.Limpiarbutton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Tirarbutton);
@@ -118,6 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NumerotextBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -137,6 +166,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button Limpiarbutton;
+        private System.Windows.Forms.Button CalcularButton;
+        private System.Windows.Forms.Label Mensajelabel3;
     }
 }
 
