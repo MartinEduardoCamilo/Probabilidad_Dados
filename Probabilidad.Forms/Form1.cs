@@ -42,6 +42,16 @@ namespace Probabilidad.Forms
             int numereo = Convert.ToInt32(NumerotextBox.Text);
             double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
 
+            switch (numereo)
+            {
+                case 1:
+                    Image image = Image.FromFile("Fotos\01.png");
+                    pictureBox1.Image = image;
+                    break;
+                default:
+                    break;
+            }
+
             Buscar(numereo, probabilidad);
         }
 
@@ -52,7 +62,7 @@ namespace Probabilidad.Forms
             double resultado = 0;
             double resultado2 = 0;
 
-            for (int i = 0; i < num.Count(); i++)
+            for (int i = 0; i < (num.Count()); i++)
             {
 
                 resultado2 = (1%6);
@@ -66,6 +76,5 @@ namespace Probabilidad.Forms
                 dataGridView1.Rows.Add(i, resultado2.ToString("N2"), resultado.ToString("N2"));
             }
         }
-
     }
 }
