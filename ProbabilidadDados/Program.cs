@@ -15,7 +15,7 @@ namespace ProbabilidadDados
             int numero = 0;
             double probabilidad = 0.0;
 
-            int[] lista = { 1, 2, 3, 4, 5, 6 };
+            
 
             Console.WriteLine("Inserete un numero: ");
             numero = Convert.ToInt32(Console.Read());
@@ -23,12 +23,18 @@ namespace ProbabilidadDados
             Console.WriteLine("Inserete la probabilidad: ");
             probabilidad = Convert.ToDouble(Console.Read());
 
-            Console.ReadKey();
+            int[] lista = { 1, 2, 3, 4, 5, 6 };
 
             for (int i = 0; i < lista.Count(); i++)
             {
                 Console.WriteLine(i);
+
+                if (lista[i] == numero)
+                {
+                    Console.WriteLine(lista[i]);
+                }
             }
+
         }
     }
 }

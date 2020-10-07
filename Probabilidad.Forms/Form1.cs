@@ -40,17 +40,7 @@ namespace Probabilidad.Forms
         private void Tirarbutton_Click(object sender, EventArgs e)
         {
             int numereo = Convert.ToInt32(NumerotextBox.Text);
-            double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
-
-            switch (numereo)
-            {
-                case 1:
-                    Image image = Image.FromFile("Fotos\01.png");
-                    pictureBox1.Image = image;
-                    break;
-                default:
-                    break;
-            }
+            double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);          
 
             Buscar(numereo, probabilidad);
         }
@@ -59,21 +49,12 @@ namespace Probabilidad.Forms
         {
             int[] num = {1, 2, 3, 4, 5, 6 };
 
-            double resultado = 0;
-            double resultado2 = 0;
+            double resultado2 = 1/6;
 
             for (int i = 0; i < (num.Count()); i++)
             {
-
-                resultado2 = (1%6);
-
-                if (numero == num[i])
-                {
-                    resultado = ((numero/6) + probabilidad);
-                }
-
-
-                dataGridView1.Rows.Add(i, resultado2.ToString("N2"), resultado.ToString("N2"));
+                 
+                dataGridView1.Rows.Add(i, resultado2.ToString("N2"), 1);
             }
         }
     }
