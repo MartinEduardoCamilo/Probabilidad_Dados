@@ -47,14 +47,25 @@ namespace Probabilidad.Forms
 
         private void Buscar(int numero, double probabilidad)
         {
+            double aux = 0;
             int[] num = {1, 2, 3, 4, 5, 6 };
 
-            double resultado2 = 1/6;
+            
 
             for (int i = 0; i < (num.Count()); i++)
             {
-                 
-                dataGridView1.Rows.Add(i, resultado2.ToString("N2"), 1);
+                double resultado2 = 0.16;
+
+                if (numero == num[i])
+                {
+                    aux = 0.16 + probabilidad;
+
+                    dataGridView1.Rows.Add(i+1, resultado2.ToString("N2"), aux.ToString("N2"));
+                }
+                else
+                {
+                    dataGridView1.Rows.Add(i+1, resultado2.ToString("N2"), 0);
+                }
             }
         }
     }
