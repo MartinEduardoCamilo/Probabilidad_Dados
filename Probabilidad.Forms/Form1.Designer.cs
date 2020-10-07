@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.NumerotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ProbabilidadtextBox = new System.Windows.Forms.TextBox();
             this.Tirarbutton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Limpiarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +75,7 @@
             // 
             // Tirarbutton
             // 
-            this.Tirarbutton.Location = new System.Drawing.Point(27, 170);
+            this.Tirarbutton.Location = new System.Drawing.Point(12, 170);
             this.Tirarbutton.Name = "Tirarbutton";
             this.Tirarbutton.Size = new System.Drawing.Size(75, 23);
             this.Tirarbutton.TabIndex = 4;
@@ -82,17 +86,32 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(186, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(192, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(356, 170);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.Text = "dataGridView1";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // Limpiarbutton
+            // 
+            this.Limpiarbutton.Location = new System.Drawing.Point(93, 170);
+            this.Limpiarbutton.Name = "Limpiarbutton";
+            this.Limpiarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Limpiarbutton.TabIndex = 6;
+            this.Limpiarbutton.Text = "Limpiar";
+            this.Limpiarbutton.UseVisualStyleBackColor = true;
+            this.Limpiarbutton.Click += new System.EventHandler(this.Limpiarbutton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 238);
+            this.Controls.Add(this.Limpiarbutton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Tirarbutton);
             this.Controls.Add(this.ProbabilidadtextBox);
@@ -102,6 +121,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,6 +135,8 @@
         private System.Windows.Forms.TextBox ProbabilidadtextBox;
         private System.Windows.Forms.Button Tirarbutton;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button Limpiarbutton;
     }
 }
 
