@@ -42,7 +42,7 @@ namespace Probabilidad.Forms
         {
             errorProvider1.Clear();
 
-            if (Regex.IsMatch(NumerotextBox.Text, "[1 - 6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0 - 9] + (,[0 - 9]{ 1,3})?"))
+            if (Regex.IsMatch(NumerotextBox.Text, "[1 - 6]"))
             {
                
                     int numereo = Convert.ToInt32(NumerotextBox.Text);
@@ -56,7 +56,7 @@ namespace Probabilidad.Forms
                 errorProvider1.SetError(NumerotextBox, "Debe de ser un numero entero entre el 1 y 6");              
                 NumerotextBox.Focus();
             }
-       
+      
         }
 
         private void Buscar(int numero, double probabilidad)
