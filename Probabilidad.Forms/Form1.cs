@@ -45,9 +45,8 @@ namespace Probabilidad.Forms
             if (NumerotextBox.Text == string.Empty || NumerotextBox.Text != null)
             {
                 NumerotextBox.Text = ran.Next(1, 6).ToString();
-                Mensajelabel3.Text = "Numero del dado";
+                Mensajelabel3.Text = "Número del dado";
             }
-
 
         }
 
@@ -79,7 +78,6 @@ namespace Probabilidad.Forms
             restar = 0;
         }
     
-
         private void Limpiarbutton_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -94,13 +92,20 @@ namespace Probabilidad.Forms
         {
             dataGridView1.Rows.Clear();
 
-            if (NumerotextBox.Text != null)
+            if (NumerotextBox.Text != null || ProbabilidadtextBox.Text != null)
             {
-                if (Regex.IsMatch(NumerotextBox.Text, "[1-6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0-9] + (,[0-9]{ 1,3})?"))
+
+                if (Convert.ToInt32(NumerotextBox.Text) < 0)
                 {
+                    dataGridView1.Rows.Clear();
+                    errorProvider1.SetError(NumerotextBox, "Debe de ser un número entero entre el 1 y 6");
+                    NumerotextBox.Focus();
+                }
+                else  if (Regex.IsMatch(NumerotextBox.Text, "[1-6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0-9] + (,[0-9]{ 1,3})?"))
+                { 
                     int numereo = Convert.ToInt32(NumerotextBox.Text);
                     double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
-
+               
                     if(probabilidad > 0.84 || probabilidad < 0)
                     {
                       
@@ -120,13 +125,12 @@ namespace Probabilidad.Forms
                 }
                 else
                 {
-                    errorProvider1.SetError(ProbabilidadtextBox, "Debe de ser un numero decimal");
+                    errorProvider1.SetError(ProbabilidadtextBox, "Debe de ser un número decimal");
                     ProbabilidadtextBox.Focus();
-                    errorProvider1.SetError(NumerotextBox, "Debe de ser un numero entero entre el 1 y 6");
+                    errorProvider1.SetError(NumerotextBox, "Debe de ser un número entero entre el 1 y 6");
                     NumerotextBox.Focus();
                 }
             }
         }
     }
 }
-
