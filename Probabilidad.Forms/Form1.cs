@@ -41,39 +41,41 @@ namespace Probabilidad.Forms
         private void Tirarbutton_Click(object sender, EventArgs e)
         {
             Random ran = new Random();
-            
-            if(NumerotextBox.Text == string.Empty || NumerotextBox.Text != null )
+
+            if (NumerotextBox.Text == string.Empty || NumerotextBox.Text != null)
             {
                 NumerotextBox.Text = ran.Next(1, 6).ToString();
                 Mensajelabel3.Text = "Numero del dado";
-            }  
-            
-            
+            }
+
+
         }
 
         private void Buscar(int numero, double probabilidad)
         {
             double aux = 0;
-            int[] num = {1, 2, 3, 4, 5, 6 };
-            double restar = 0 ;
+            int[] num = { 1, 2, 3, 4, 5, 6 };
+            double restar = 0;
             for (int i = 0; i < (num.Count()); i++)
             {
                 double resultado2 = 0.16;
-                
+
                 if (numero == num[i])
                 {
-                    aux = (0.16 + probabilidad)*100;
+                    aux = (0.16 + probabilidad) * 100;
 
-                    dataGridView1.Rows.Add(i+1, resultado2.ToString("N2"), aux+"%");
-                }           
-                else
-                {                
-                    restar = ((aux/100)+(probabilidad/3)*100);
-                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), restar+"%");
-                    
-                }               
+                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), aux + "%");
+                }
+                else if (numero != num[i])
+                {
+                    restar = ((1 - (probabilidad + resultado2) / 5));
+                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), restar + "%");
+                }
+
+
             }
         }
+    
 
         private void Limpiarbutton_Click(object sender, EventArgs e)
         {
@@ -107,3 +109,4 @@ namespace Probabilidad.Forms
         }
     }
 }
+
