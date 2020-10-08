@@ -56,10 +56,12 @@ namespace Probabilidad.Forms
             double aux = 0;
             int[] num = { 1, 2, 3, 4, 5, 6 };
             double restar = 0;
-            for (int i = 0; i < (num.Count()); i++)
-            {
-                double resultado2 = 0.16;
+            const double resultado2 = 0.16;
+            const int dividendo = 5;
 
+
+            for (int i = 0; i < (num.Count()); i++)
+            {              
                 if (numero == num[i])
                 {
                     aux = (0.16 + probabilidad) * 100;
@@ -68,12 +70,13 @@ namespace Probabilidad.Forms
                 }
                 else if (numero != num[i])
                 {
-                    restar = ((1 - (probabilidad + resultado2) / 5));
-                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), restar + "%");
+                    restar = (((1 - (probabilidad + resultado2)))/dividendo)*100;
+                    dataGridView1.Rows.Add(i + 1, resultado2.ToString("N2"), restar.ToString("N2")+ "%");
                 }
-
-
             }
+
+            aux = 0;
+            restar = 0;
         }
     
 
@@ -84,19 +87,36 @@ namespace Probabilidad.Forms
             ProbabilidadtextBox.Text = string.Empty;
             dataGridView1.Rows.Clear();
             Mensajelabel3.Text = null;
+            
         }
 
         private void CalcularButton_Click(object sender, EventArgs e)
         {
-             if (NumerotextBox.Text != null)
-            {
+            dataGridView1.Rows.Clear();
 
-           
+            if (NumerotextBox.Text != null)
+            {
                 if (Regex.IsMatch(NumerotextBox.Text, "[1-6]") || Regex.IsMatch(ProbabilidadtextBox.Text, "[0-9] + (,[0-9]{ 1,3})?"))
                 {
                     int numereo = Convert.ToInt32(NumerotextBox.Text);
                     double probabilidad = Convert.ToDouble(ProbabilidadtextBox.Text);
-                    Buscar(numereo, probabilidad);
+
+                    if(probabilidad > 0.84 || probabilidad < 0)
+                    {
+                      
+                        errorProvider1.SetError(ProbabilidadtextBox, "La probilidad no puede ser mayor que 0.84 o menor que 0");
+                        ProbabilidadtextBox.Focus();
+
+                        NumerotextBox.Text = string.Empty;
+                        ProbabilidadtextBox.Text = string.Empty;
+                        dataGridView1.Rows.Clear();
+                        Mensajelabel3.Text = null;
+
+                    }
+                    else
+                    {
+                        Buscar(numereo, probabilidad);
+                    }  
                 }
                 else
                 {
